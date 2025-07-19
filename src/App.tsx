@@ -1,15 +1,5 @@
-import About from "./components/about/About";
-import CTA from "./components/CTA/CTA";
-import Hero from "./components/hero/Hero";
-
 export const App = () => {
-    return (
-        <div className="app">
-            <Hero />
-            <About />
-            <CTA />
-        </div>
-    );
+    return <div className="app"></div>;
 };
 
 export default App;
