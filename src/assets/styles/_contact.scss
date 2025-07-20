@@ -1,0 +1,10 @@
+@use 'variables' as *;
+@use 'functions' as *;
+
+.contactMain {
+  margin: 12rem 0;
+
+  .goodByeText {
+    @include adaptiveMainText;
+  }
+}

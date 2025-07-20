@@ -1,0 +1,29 @@
+@use 'variables' as vars;
+
+.header {
+  position: fixed;
+  top: 1.9rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.mainSec {
+  background: vars.$greyColor;
+  height: 3rem;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 200px;
+  border-radius: 2rem;
+}
+
+.headerMainText {
+  padding: 12px 24px;
+  border-radius: 2em;
+  color: black;
+  text-decoration: none;
+}

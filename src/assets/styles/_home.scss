@@ -1,0 +1,151 @@
+@use "animations";
+@use "variables" as vars;
+@use 'functions' as *;
+
+
+.welcomeText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slideUp 1s ease-in-out 1;
+
+  .bigText {
+    text-align: center;
+    padding: 0 30px;
+    max-width: 620px;
+    margin-top: 6.5rem;
+
+    @include adaptiveMainText;
+  }
+}
+
+.listOfWelcomeText {
+  display: flex;
+
+  div {
+    margin: 0 .3rem;
+    background: vars.$greyColor;
+    padding: .5rem .8rem;
+    border-radius: 1.3rem;
+  }
+
+  @media (max-width: vars.$phoneWide) {
+    display: none;
+  }
+}
+
+.homeMainContent {
+  display: grid;
+  column-gap: 1.3rem;
+  row-gap: 2.8rem;
+  justify-content: center;
+  animation: slideUp 1.2s ease-in-out 1;
+
+  .mainImg {
+    text-align: center;
+    border-radius: 3rem;
+    cursor: pointer;
+    position: relative;
+    transition: opacity 2s;
+    width: 100%;
+    height: 100%;
+
+    &:hover .whenHover {
+      opacity: 1;
+    }
+  }
+
+  .mainImg img,
+  .mainImg video {
+    border-radius: 1rem;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .whenHover {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    backdrop-filter: blur(14px);
+    border-radius: 1rem;
+    transition: opacity .3s;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    padding: 0.4rem 1.2rem;
+    color: white;
+    justify-content: space-between;
+
+    &:hover .imgInsideSign {
+      transform: translateY(-15px) translateX(15px);
+    }
+
+    @media (max-width: vars.$phoneWide) {
+      all: unset;
+      text-align: left;
+      margin-bottom: 5rem;
+
+      .imgInsideSign {
+        display: none;
+      }
+    }
+  }
+
+  .imgInsideSign {
+    margin-top: 22px;
+    margin-right: 15px;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 1.5rem;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .3s;
+
+    img {
+      width: .85rem;
+      height: .85rem;
+    }
+  }
+
+  @media (min-width: vars.$phoneWide) {
+    grid-template-columns: 1fr 1fr;
+    margin: 8.4rem 0.5rem;
+  }
+
+  @media (min-width: vars.$tablesWide) {
+    margin: 14rem 0.5rem;
+  }
+
+  @media (max-width: vars.$phoneWide) {
+    grid-template-columns: 1fr;
+    margin: 10rem 0.5rem;
+  }
+}
+
+.downStickFootMain {
+  position: fixed;
+  top: unset;
+  bottom: 2rem;
+  animation: slideUp 1.5s ease-in-out 1;
+
+  .allFixedSticky {
+    cursor: pointer;
+    transition: opacity 1s;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    p {
+      margin: 0 0 0 0.5rem;
+    }
+  }
+}
