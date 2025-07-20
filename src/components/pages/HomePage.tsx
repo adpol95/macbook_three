@@ -1,3 +1,5 @@
+import coding from "@/assets/media/coding.mp4";
+import diamond from "@/assets/media/diamond.mp4";
 import diagonalArrow from "@/assets/media/top-right.png";
 import { GoodByeText } from "@/components/ui/GoodByeText";
 
@@ -56,7 +58,7 @@ export const HomePage = () => {
                 </div>
                 <div className={"mainImg"}>
                     <img
-                        src="https://images.unsplash.com/photo-1461749280684-dccba630e2f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1024&q=80"
+                        src="https://images.unsplash.com/photo-1599507593499-a3f7d7d97667?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="Software Coding"
                     />
                     <div className={"whenHover"}>
@@ -68,7 +70,7 @@ export const HomePage = () => {
                 </div>
                 <div className={"mainImg"}>
                     <video
-                        src="https://videos.pexels.com/video-files/3571264/3571264-sd-640x360-30fps.mp4"
+                        src="https://framerusercontent.com/modules/assets/SGjFvgcbK7s4yKh0xwuNjriMNII~5SCIlrVv6SNR5PFMjsMv3qAIi3sYsG2gjdlB0qM-tng.mp4"
                         autoPlay
                         loop
                         playsInline
@@ -106,13 +108,7 @@ export const HomePage = () => {
                     </div>
                 </div>
                 <div className={"mainImg"}>
-                    <video
-                        src="https://videos.pexels.com/video-files/1722774/1722774-sd-640x360-30fps.mp4"
-                        autoPlay
-                        loop
-                        playsInline
-                        muted
-                    />
+                    <video src={diamond} autoPlay loop playsInline muted />
                     <div className={"whenHover"}>
                         <p> Programming Animation </p>
                         <div className={"imgInsideSign"}>
@@ -146,7 +142,7 @@ export const HomePage = () => {
                 </div>
                 <div className={"mainImg"}>
                     <img
-                        src="https://images.unsplash.com/photo-1633356122544-f1347c16d0cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1024&q=80"
+                        src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         alt="Blockchain Tech"
                     />
                     <div className={"whenHover"}>
@@ -158,7 +154,7 @@ export const HomePage = () => {
                 </div>
                 <div className={"mainImg"}>
                     <video
-                        src="https://videos.pexels.com/video-files/3195394/3195394-sd-640x360-30fps.mp4"
+                        src={coding}
                         autoPlay
                         loop
                         playsInline
