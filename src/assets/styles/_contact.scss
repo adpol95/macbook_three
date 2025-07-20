@@ -4,6 +4,13 @@
 .contactMain {
   margin: 12rem 0;
 
+  height: 570px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   .goodByeText {
     @include adaptiveMainText;
   }
