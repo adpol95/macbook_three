@@ -7,15 +7,15 @@ export const HomePage = () => {
     return (
         <div className={"homePageMain"}>
             <div className={"welcomeText"}>
-                <p className={"bigText"}>
-                    A software development studio creating innovative IT solutions for
-                    clients worldwide
+                <p className={"bigText"} style={{ color: "white" }}>
+                    A Galactic IT Hub Crafting Cutting-Edge Technologies for
+                    Universal Explorers
                 </p>
                 <div className={"listOfWelcomeText"}>
-                    <div style={{ background: "white" }}>Expertise</div>
-                    <div>Web Development</div>
-                    <div>Mobile Apps</div>
-                    <div>AI Systems</div>
+                    <div style={{ background: "white", color: "black" }}>Expertise</div>
+                    <div style={{ color: "white" }}>Web Development</div>
+                    <div style={{ color: "white" }}>Mobile Apps</div>
+                    <div style={{ color: "white" }}>AI Systems</div>
                 </div>
             </div>
             {/* <ThreeScene /> */}
@@ -26,7 +26,7 @@ export const HomePage = () => {
                         alt="Web Development"
                     />
                     <div className={"whenHover"}>
-                        <p> Web Dev Project </p>
+                        <p style={{ color: "white" }}> Web Dev Project </p>
                         <div className={"imgInsideSign"}>
                             <img src={diagonalArrow} alt="Error" />
                         </div>
@@ -38,7 +38,7 @@ export const HomePage = () => {
                         alt="Mobile App"
                     />
                     <div className={"whenHover"}>
-                        <p> Mobile App </p>
+                        <p style={{ color: "white" }}> Mobile App </p>
                         <div className={"imgInsideSign"}>
                             <img src={diagonalArrow} alt="Error" />
                         </div>
@@ -50,7 +50,7 @@ export const HomePage = () => {
                         alt="AI System"
                     />
                     <div className={"whenHover"}>
-                        <p> AI Innovation </p>
+                        <p style={{ color: "white" }}> AI Innovation </p>
                         <div className={"imgInsideSign"}>
                             <img src={diagonalArrow} alt="Error" />
                         </div>
@@ -62,7 +62,7 @@ export const HomePage = () => {
                         alt="Software Coding"
                     />
                     <div className={"whenHover"}>
-                        <p> Coding Suite </p>
+                        <p style={{ color: "white" }}> Coding Suite </p>
                         <div className={"imgInsideSign"}>
                             <img src={diagonalArrow} alt="Error" />
                         </div>
@@ -77,7 +77,7 @@ export const HomePage = () => {
                         muted
                     />
                     <div className={"whenHover"}>
-                        <p> Dev Demo </p>
+                        <p style={{ color: "white" }}> Dev Demo </p>
                         <div className={"imgInsideSign"}>
                             <img src={diagonalArrow} alt="Error" />
                         </div>
@@ -89,7 +89,7 @@ export const HomePage = () => {
                         alt="Cloud Platform"
                     />
                     <div className={"whenHover"}>
-                        <p> Cloud Platform </p>
+                        <p style={{ color: "white" }}> Cloud Platform </p>
                         <div className={"imgInsideSign"}>
                             <img src={diagonalArrow} alt="Error" />
                         </div>
@@ -101,7 +101,7 @@ export const HomePage = () => {
                         alt="DevOps Tools"
                     />
                     <div className={"whenHover"}>
-                        <p> DevOps Tools </p>
+                        <p style={{ color: "white" }}> DevOps Tools </p>
                         <div className={"imgInsideSign"}>
                             <img src={diagonalArrow} alt="Error" />
                         </div>
@@ -110,7 +110,7 @@ export const HomePage = () => {
                 <div className={"mainImg"}>
                     <video src={diamond} autoPlay loop playsInline muted />
                     <div className={"whenHover"}>
-                        <p> Programming Animation </p>
+                        <p style={{ color: "white" }}> Programming Animation </p>
                         <div className={"imgInsideSign"}>
                             <img src={diagonalArrow} alt="Error" />
                         </div>
@@ -122,7 +122,7 @@ export const HomePage = () => {
                         alt="Framework Dev"
                     />
                     <div className={"whenHover"}>
-                        <p> Framework Dev </p>
+                        <p style={{ color: "white" }}> Framework Dev </p>
                         <div className={"imgInsideSign"}>
                             <img src={diagonalArrow} alt="Error" />
                         </div>
@@ -134,7 +134,7 @@ export const HomePage = () => {
                         alt="API Integration"
                     />
                     <div className={"whenHover"}>
-                        <p> API Integration </p>
+                        <p style={{ color: "white" }}> API Integration </p>
                         <div className={"imgInsideSign"}>
                             <img src={diagonalArrow} alt="Error" />
                         </div>
@@ -146,7 +146,7 @@ export const HomePage = () => {
                         alt="Blockchain Tech"
                     />
                     <div className={"whenHover"}>
-                        <p> Blockchain Tech </p>
+                        <p style={{ color: "white" }}> Blockchain Tech </p>
                         <div className={"imgInsideSign"}>
                             <img src={diagonalArrow} alt="Error" />
                         </div>
@@ -162,7 +162,7 @@ export const HomePage = () => {
                         style={{ objectFit: "cover", objectPosition: "center" }}
                     />
                     <div className={"whenHover"}>
-                        <p> Coding Session </p>
+                        <p style={{ color: "white" }}> Coding Session </p>
                         <div className={"imgInsideSign"}>
                             <img src={diagonalArrow} alt="Error" />
                         </div>

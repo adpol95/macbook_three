@@ -13,10 +13,10 @@ export const GoodByeText = () => {
     <div className={'goodByeText'}
          data-aos='fade-up'>
       <p className={'firstText'}>
-        Let's build something amazing together.
+        Let's launch an extraordinary project into orbit together.
       </p>
       <p className={'secondText'}>
-        Contact us for your next IT project.
+        Contact us to explore new IT frontiers.
       </p>
     </div>
   );
