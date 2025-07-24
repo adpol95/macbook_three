@@ -39,4 +39,9 @@ code {
     flex: 1 1 auto;
 
     color: white;
+
+    @media (min-width: $desktopWide) {
+        margin: 0 15%;
+    }
+
 }

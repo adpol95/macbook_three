@@ -6,14 +6,18 @@ import { Group, Mesh } from "three";
 import earthTexture from "@/assets/textures/earthmap1k.jpg";
 import jupiterTexture from "@/assets/textures/jup0vss1.jpg";
 import marsTexture from "@/assets/textures/mars_1k_color.jpg";
+import neptuneTexture from "@/assets/textures/neptunemap.jpg";
 import saturnTexture from "@/assets/textures/saturnmap.jpg";
+import sunTexture from "@/assets/textures/sunmap.jpg";
 
 const FloatingShapes = () => {
     const shapesRefs = [
-        useRef<Mesh>(null!),
-        useRef<Mesh>(null!),
-        useRef<Mesh>(null!),
-        useRef<Mesh>(null!)
+        useRef<Mesh>(null),
+        useRef<Mesh>(null),
+        useRef<Mesh>(null),
+        useRef<Mesh>(null),
+        useRef<Mesh>(null),
+        useRef<Mesh>(null)
     ];
     const scrollY = useRef(0);
 
@@ -32,15 +36,32 @@ const FloatingShapes = () => {
                 const yBase = index * 5 - 7.5;
                 const yOffset = Math.sin(time * (index * 0.2 + 0.5) + index) * 4;
                 ref.current.position.y = yBase + yOffset;
-                const radius = 8 + index * 5;
-                const speed = 0.1 / (index + 1);
-                ref.current.position.x = Math.cos(time * speed + index) * radius;
-                const baseZ = Math.sin(time * speed + index) * radius - 40;
+                if (index < 5) {
+                    const radius = 30 + index * 15;
+                    const speed = 0.1 / (index + 1);
+                    ref.current.position.x = Math.cos(time * speed + index) * radius;
+                } else {
+                    ref.current.position.x = 1;
+                }
+                const baseZ =
+                    Math.sin(time * (0.1 / (index + 1)) + index) *
+                        (index < 5 ? 30 + index * 15 : 3.5) -
+                    120;
                 const zOffset = scrollY.current * 0.05;
                 ref.current.position.z = baseZ + zOffset;
                 ref.current.rotation.y += 0.01 * (index % 2 === 0 ? 1 : -1);
                 const baseScale =
-                    index === 0 ? 2.0 : index === 1 ? 1.8 : index === 2 ? 2.2 : 1.5;
+                    index === 0
+                        ? 2.0
+                        : index === 1
+                          ? 1.8
+                          : index === 2
+                            ? 2.2
+                            : index === 3
+                              ? 1.5
+                              : index === 4
+                                ? 3.5
+                                : 5;
                 const scaleFactor = 1 + Math.sin(scrollY.current * 0.002 + index) * 0.2;
                 ref.current.scale.set(
                     baseScale * scaleFactor,
@@ -55,49 +76,67 @@ const FloatingShapes = () => {
         jupiter: jupiterTexture,
         earth: earthTexture,
         mars: marsTexture,
-        saturn: saturnTexture
+        saturn: saturnTexture,
+        neptune: neptuneTexture,
+        sun: sunTexture
     });
 
     return (
         <>
-            <mesh ref={shapesRefs[0]} position={[0, 0, -10]}>
-                <sphereGeometry args={[2.0, 32, 32]} />
+            <mesh ref={shapesRefs[5]} position={[1, -3, -15]}>
+                <sphereGeometry args={[3.5, 32, 32]} />
                 <meshStandardMaterial
-                    map={textures.jupiter}
-                    emissive="#666666"
-                    emissiveIntensity={0.2}
+                    map={textures.sun}
+                    emissive="#700000"
+                    emissiveIntensity={100}
                 />
-            </mesh>
-            <mesh ref={shapesRefs[1]} position={[3, 2, -8]}>
-                <sphereGeometry args={[1.8, 32, 32]} />
-                <meshStandardMaterial
-                    map={textures.earth}
-                    emissive="#666666"
-                    emissiveIntensity={0.2}
-                />
-            </mesh>
-            <mesh ref={shapesRefs[2]} position={[-2, -1, -12]}>
-                <sphereGeometry args={[2.2, 32, 32]} />
-                <meshStandardMaterial
-                    map={textures.mars}
-                    emissive="#666666"
-                    emissiveIntensity={0.2}
-                />
-            </mesh>
-            <mesh ref={shapesRefs[3]} position={[1, -3, -15]}>
-                <sphereGeometry args={[1.5, 32, 32]} />
-                <meshStandardMaterial
-                    map={textures.saturn}
-                    emissive="#666666"
-                    emissiveIntensity={0.2}
-                />
-                <mesh position={[0, 0, 0]} scale={0.3}>
-                    <ringGeometry args={[1.5, 2, 24]} />
+                <mesh ref={shapesRefs[0]} position={[0, 0, -10]}>
+                    <sphereGeometry args={[2.0, 32, 32]} />
                     <meshStandardMaterial
-                        color="#ffeb3b"
-                        emissive="#fbc02d"
+                        map={textures.jupiter}
+                        emissive="#666666"
                         emissiveIntensity={0.2}
-                        side={2}
+                    />
+                </mesh>
+                <mesh ref={shapesRefs[1]} position={[3, 2, -8]}>
+                    <sphereGeometry args={[1.8, 32, 32]} />
+                    <meshStandardMaterial
+                        map={textures.earth}
+                        emissive="#666666"
+                        emissiveIntensity={0.2}
+                    />
+                </mesh>
+                <mesh ref={shapesRefs[2]} position={[-2, -1, -12]}>
+                    <sphereGeometry args={[2.2, 32, 32]} />
+                    <meshStandardMaterial
+                        map={textures.mars}
+                        emissive="#666666"
+                        emissiveIntensity={0.2}
+                    />
+                </mesh>
+                <mesh ref={shapesRefs[3]} position={[1, -3, -15]}>
+                    <sphereGeometry args={[1.5, 32, 32]} />
+                    <meshStandardMaterial
+                        map={textures.saturn}
+                        emissive="#666666"
+                        emissiveIntensity={0.2}
+                    />
+                    <mesh position={[0, 0, 0]} scale={0.3}>
+                        <ringGeometry args={[1.5, 2, 24]} />
+                        <meshStandardMaterial
+                            color="#ffeb3b"
+                            emissive="#fbc02d"
+                            emissiveIntensity={0.2}
+                            side={2}
+                        />
+                    </mesh>
+                </mesh>
+                <mesh ref={shapesRefs[4]} position={[1, -3, -15]}>
+                    <sphereGeometry args={[1.5, 32, 32]} />
+                    <meshStandardMaterial
+                        map={textures.neptune}
+                        emissive="#666666"
+                        emissiveIntensity={0.2}
                     />
                 </mesh>
             </mesh>
@@ -166,10 +205,10 @@ export const BackgroundScene = () => {
             }}
         >
             <Canvas>
-                <ambientLight intensity={0.8} />
+                <ambientLight intensity={2} />
                 <pointLight
                     position={[10, 10, -5]}
-                    intensity={2.0}
+                    intensity={1.5}
                     decay={1.5}
                     distance={60}
                 />
