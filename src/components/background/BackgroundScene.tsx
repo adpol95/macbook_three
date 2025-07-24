@@ -49,7 +49,7 @@ const FloatingShapes = () => {
                     120;
                 const zOffset = scrollY.current * 0.05;
                 ref.current.position.z = baseZ + zOffset;
-                ref.current.rotation.y += 0.01 * (index % 2 === 0 ? 1 : -1);
+                ref.current.rotation.y += 0.01 * (index % 2 === 0 ? 1 : -0.3);
                 const baseScale =
                     index === 0
                         ? 2.0
