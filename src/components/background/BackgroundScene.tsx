@@ -205,7 +205,7 @@ export const BackgroundScene = () => {
             }}
         >
             <Canvas>
-                <ambientLight intensity={2} />
+                <ambientLight intensity={1.3} />
                 <pointLight
                     position={[10, 10, -5]}
                     intensity={1.5}
